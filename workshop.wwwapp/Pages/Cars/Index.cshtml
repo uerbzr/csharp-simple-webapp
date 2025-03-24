@@ -1,0 +1,29 @@
+﻿@page
+@model workshop.wwwapp.Pages.Cars.IndexModel
+@{
+}
+<h2>Car List</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Make</th>
+            <th>Model</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var car in Model.Cars)
+        {
+            <tr>
+                <td>@car.Make</td>
+                <td>@car.Model</td>
+                <td>
+                    @for (int counter = 1; counter < car.Rating; counter++)
+                    {
+                        <span title="@counter">⭐</span>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
